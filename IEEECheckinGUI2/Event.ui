@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Event</class>
+ <widget class="QWidget" name="Event">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>464</width>
+    <height>285</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>IEEE Event</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>icon1.ico</normaloff>icon1.ico</iconset>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>160</x>
+     <y>30</y>
+     <width>161</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font: 16pt &quot;MS Shell Dlg 2&quot;;</string>
+   </property>
+   <property name="text">
+    <string>Swipe id+ Card</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>110</y>
+     <width>181</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="AddUserpushButton">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>170</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>SignUp</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Event</receiver>
+   <slot>SwipeEvent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>210</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Event</receiver>
+   <slot>ColorChangeOnSwipe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>230</x>
+     <y>120</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>231</x>
+     <y>142</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
