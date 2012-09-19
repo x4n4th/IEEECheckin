@@ -11,8 +11,37 @@ void MySQLConnection::InitializeConnection(string host, string user, string pass
 }
 void MySQLConnection::CreateStructure()
 {
-   string myQuery = "CREATE TABLE IF NOT EXISTS checkin( emailAddress varchar(50), studentID int(20) NOT NULL, accessID varchar(50) NOT NULL, points int(10) NOT NULL, time TIMESTAMP DEFAULT CURRENT_TIMESTAMP, PRIMARY KEY (`email`))";
-   //boost::thread workerThread(Query, myQuery);
+   string myQuery;
+
+   myQuery = "CREATE TABLE IF NOT EXISTS `Events` ("
+             "`number` int(5) NOT NULL DEFAULT '0',"
+             "`name` varchar(256) DEFAULT 'Default',"
+             "`location` varchar(256) DEFAULT 'Default',"
+             "`points` int(16) DEFAULT '0',"
+             "`date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+             "PRIMARY KEY (`number`)"
+             ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+
+   Query(myQuery);
+
+   myQuery = "CREATE TABLE IF NOT EXISTS `checkin` ("
+             "`num` int(9) NOT NULL AUTO_INCREMENT,"
+             "`cardID` int(20) NOT NULL,"
+             "`time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,"
+             "`eventNumber` int(6) NOT NULL DEFAULT '0',"
+             "PRIMARY KEY (`num`)"
+             ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;";
+
+   Query(myQuery);
+
+   myQuery = "CREATE TABLE IF NOT EXISTS `members` ("
+             "`cardID` bigint(20) NOT NULL,"
+             "`studentName` varchar(60) DEFAULT NULL,"
+             "`emailAddress` varchar(60) DEFAULT NULL,"
+             "`points` int(16) DEFAULT NULL,"
+             "PRIMARY KEY (`cardID`)"
+             ") ENGINE=InnoDB DEFAULT CHARSET=latin1;";
+
    Query(myQuery);
 }
 void MySQLConnection::Query(string& myQuery)

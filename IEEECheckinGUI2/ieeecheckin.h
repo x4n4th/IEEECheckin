@@ -29,6 +29,7 @@ public:
         void ClearList();
         void ExportToExcel();
         void Offline();
+        void createEvent();
 private:
     Ui::IEEECheckin ui;
     MYSQL *connection;

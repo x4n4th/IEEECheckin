@@ -52,6 +52,10 @@ void IEEECheckin::startEvent()
     Event *w = new Event;
 
     string points = ui.pointsField->text().toStdString();
+    state.setLocation(ui.LocationField->text().toStdString()); 
+    state.setName(ui.EventName->text().toStdString());
+    state.setPoints(ui.pointsField->text().toInt());
+
 
     w->Initialize(connection, points, state, Queue);
 }
@@ -136,7 +140,7 @@ void IEEECheckin::Report()
 
         string myQuery;
 
-        myQuery =  "SELECT emailAddress, studentID, accessID, points, time FROM checkin";
+        myQuery =  "SELECT emailAddress, cardID, studentName, points FROM members";
         
         query_state = mysql_query(connection, myQuery.c_str());
         if (query_state !=0) 
@@ -214,4 +218,18 @@ void IEEECheckin::Offline()
     ui.AddMemberButton->setEnabled(true);
     ui.ClearButton->setEnabled(true);
     ui.ExportButton->setEnabled(false);
+}
+
+void IEEECheckin::createEvent(){
+    /*string myQuery = "INSERT INTO Events (name, location, points) VALUES ('" + ui.EventName + "', '" +   + "', '" + name + "', '" + points + ")";
+
+        
+    query_state = mysql_query(connection, myQuery.c_str());
+    if (query_state !=0) 
+    {
+        ui.textEdit->append(mysql_error(connection));
+    }
+
+    result = mysql_store_result(connection);
+    row = mysql_fetch_row(result);*/
 }

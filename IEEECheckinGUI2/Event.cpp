@@ -73,7 +73,7 @@ void Event::SwipeEvent()
             plt.setColor(QPalette::WindowText, Qt::green);
             ui.label->setPalette(plt);
 
-            myQuery =  "SELECT studentID FROM checkin WHERE studentID = '" + studentID + "'";
+            myQuery =  "SELECT cardID FROM members WHERE cardID = '" + studentID + "'";
 
             query_state = mysql_query(connection, myQuery.c_str());
             if (query_state !=0) 
@@ -87,6 +87,7 @@ void Event::SwipeEvent()
             if(mysql_num_rows(result))
             {
                 myQuery =  "UPDATE checkin SET points = points + " + points + " WHERE studentID = '" + studentID + "'";
+                //myQuery = "INSERT INTO checkin (cardID, eventNumber) VALUES ('" + studentID + "', '" + state.get + "', '" + name + "', '" + points + ")";
 
                 SendQueryThread(connection, myQuery);
                 

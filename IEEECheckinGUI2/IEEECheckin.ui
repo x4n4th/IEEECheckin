@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>474</width>
-    <height>369</height>
+    <width>641</width>
+    <height>510</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -22,8 +22,8 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>80</y>
-      <width>451</width>
+      <y>210</y>
+      <width>621</width>
       <height>201</height>
      </rect>
     </property>
@@ -37,8 +37,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>50</y>
+      <x>10</x>
+      <y>180</y>
       <width>121</width>
       <height>21</height>
      </rect>
@@ -53,8 +53,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>50</y>
+      <x>140</x>
+      <y>180</y>
       <width>75</width>
       <height>21</height>
      </rect>
@@ -69,8 +69,8 @@
     </property>
     <property name="geometry">
      <rect>
-      <x>380</x>
-      <y>50</y>
+      <x>550</x>
+      <y>180</y>
       <width>75</width>
       <height>23</height>
      </rect>
@@ -82,8 +82,8 @@
    <widget class="QLineEdit" name="pointsField">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>20</y>
+      <x>450</x>
+      <y>80</y>
       <width>113</width>
       <height>20</height>
      </rect>
@@ -95,8 +95,8 @@
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>350</x>
-      <y>0</y>
+      <x>340</x>
+      <y>80</y>
       <width>91</width>
       <height>16</height>
      </rect>
@@ -112,13 +112,107 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>290</y>
-      <width>451</width>
+      <y>430</y>
+      <width>621</width>
       <height>23</height>
      </rect>
     </property>
     <property name="value">
      <number>0</number>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="EventName">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>20</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Default</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="LocationField">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>50</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>EE East</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>20</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Name Of Event</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>340</x>
+      <y>50</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Location Of Event</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="createEventButton">
+    <property name="enabled">
+     <bool>false</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>130</y>
+      <width>121</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Create Event</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>20</y>
+      <width>91</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Event Number</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="EventNumber">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>20</y>
+      <width>113</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>0</string>
     </property>
    </widget>
   </widget>
@@ -127,7 +221,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>474</width>
+     <width>641</width>
      <height>21</height>
     </rect>
    </property>
@@ -298,6 +392,22 @@
     <hint type="destinationlabel">
      <x>236</x>
      <y>184</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>createEventButton</sender>
+   <signal>clicked()</signal>
+   <receiver>IEEECheckin</receiver>
+   <slot>createEvent()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>510</x>
+     <y>173</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>320</x>
+     <y>254</y>
     </hint>
    </hints>
   </connection>

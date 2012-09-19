@@ -88,7 +88,7 @@ void AddUser::Insert()
     {
         if(OnlineState.isOnline())
         {
-            myQuery =  "SELECT studentID FROM checkin WHERE studentID = '" + cardID + "'";
+            myQuery =  "SELECT cardID FROM members WHERE cardID = '" + cardID + "'";
 
             query_state = mysql_query(connection, myQuery.c_str());
             if (query_state !=0) 
@@ -109,7 +109,7 @@ void AddUser::Insert()
                 name = esc(connection, name);
                 email = esc(connection, email);
 
-                myQuery = "INSERT INTO checkin (emailAddress, studentID, accessID, points, time) VALUES ('" + email + "', '" + cardID + "', '" + name + "', '" + points + "', CURRENT_TIMESTAMP )";
+                myQuery = "INSERT INTO members (emailAddress, studentID, cardID, points) VALUES ('" + email + "', '" + cardID + "', '" + name + "', '" + points + ")";
 
                 SendEmailThread(email);
 
